@@ -1,0 +1,13 @@
+{
+  "appId": "it.pickalert.app",
+  "appName": "PickAlert",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "https"
+  },
+  "plugins": {
+    "FirebaseMessaging": {
+      "presentationOptions": ["badge", "sound", "alert"]
+    }
+  }
+}
