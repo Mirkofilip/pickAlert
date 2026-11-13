@@ -3,6 +3,15 @@ import { computed, ref, onMounted, onUnmounted } from "vue";
 const props = defineProps({ report: { type: Object, required: true } }),
   now = ref(Date.now());
 let timer;
+const locationTypes = {
+  citta: "Via o piazza",
+  metro: "Metropolitana",
+  stazione_treni: "Stazione ferroviaria",
+  altro: "Altro luogo pubblico",
+};
+const locationType = computed(
+  () => locationTypes[props.report.location_type] || null,
+);
 onMounted(() => {
   timer = setInterval(() => (now.value = Date.now()), 10000);
 });
@@ -28,6 +37,7 @@ const time = computed(() =>
       ><span class="expiry">Ancora {{ time }}</span>
     </div>
     <h2>{{ report.location_label || "Episodio di borseggio" }}</h2>
+    <span v-if="locationType" class="chip location-type">{{ locationType }}</span>
     <p>{{ report.description }}</p>
     <small
       >Pubblicata
@@ -58,6 +68,10 @@ const time = computed(() =>
 .expiry {
   font-size: 12px;
   color: #626c60;
+}
+.location-type {
+  color: #366749;
+  background: #edf2e8;
 }
 .report-card p {
   white-space: pre-wrap;
