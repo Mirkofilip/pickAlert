@@ -16,6 +16,7 @@ defineProps({ showReportAction: { type: Boolean, default: false } });
 </template>
 <style scoped>
 .report-action {
+  display: none;
   position: fixed;
   left: 0;
   right: 0;
