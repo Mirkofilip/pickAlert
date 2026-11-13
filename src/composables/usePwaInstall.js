@@ -8,7 +8,7 @@ const installed = ref(
     navigator.standalone === true,
 );
 window.addEventListener("beforeinstallprompt", (event) => {
-  event.preventDefault();
+  //event.preventDefault();
   installEvent.value = event;
 });
 window.addEventListener("appinstalled", () => {
