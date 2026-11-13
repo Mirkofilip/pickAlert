@@ -3,8 +3,12 @@ defineProps({ showReportAction: { type: Boolean, default: false } });
 </script>
 <template>
   <div v-if="showReportAction" class="report-action">
-    <RouterLink to="/nuova-segnalazione" class="button"
-      ><span aria-hidden="true">＋</span> Segnala un episodio</RouterLink
+    <RouterLink
+      to="/nuova-segnalazione"
+      class="button"
+      aria-label="Segnala un episodio"
+      title="Segnala un episodio"
+      ><span aria-hidden="true">＋</span></RouterLink
     >
   </div>
   <nav class="bottom-nav" aria-label="Navigazione principale">
@@ -16,24 +20,29 @@ defineProps({ showReportAction: { type: Boolean, default: false } });
 </template>
 <style scoped>
 .report-action {
-  display: none;
   position: fixed;
-  left: 0;
-  right: 0;
-  bottom: calc(var(--bottom-nav-height) + env(safe-area-inset-bottom));
+  right: calc(20px + env(safe-area-inset-right));
+  bottom: calc(var(--bottom-nav-height) + env(safe-area-inset-bottom) + 20px);
   z-index: 100;
-  padding: 14px 20px 12px;
-  background: linear-gradient(transparent, #f6f8f2 28%);
   pointer-events: none;
 }
 .report-action .button {
   display: flex;
-  width: 100%;
-  max-width: 720px;
-  min-height: 50px;
-  margin: 0 auto;
-  box-shadow: 0 3px 12px #204f3026;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  min-height: 56px;
+  padding: 0;
+  border-radius: 16px;
+  font-size: 30px;
+  line-height: 1;
+  box-shadow: 0 4px 12px #204f3040;
   pointer-events: auto;
+}
+.report-action .button:focus-visible {
+  outline: 3px solid #204f30;
+  outline-offset: 4px;
 }
 
 .bottom-nav {
