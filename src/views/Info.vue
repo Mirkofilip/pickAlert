@@ -32,10 +32,10 @@
         rifiutate scadono entro 24 ore; la pulizia del database avviene ogni 15
         minuti.
       </p>
-      <p class="muted">
+      <!--p class="muted">
         L’informativa completa con titolare, contatti, fornitori e tempi dei log
         deve essere pubblicata prima del rilascio.
-      </p>
+      </p-->
     </section>
     <RouterLink to="/login">Accesso moderatori →</RouterLink>
   </main>
