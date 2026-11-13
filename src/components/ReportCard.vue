@@ -37,7 +37,7 @@ const time = computed(() =>
       ><span class="expiry">Ancora {{ time }}</span>
     </div>
     <h2>{{ report.location_label || "Episodio di borseggio" }}</h2>
-    <span v-if="locationType" class="chip location-type">{{ locationType }}</span>
+    <div v-if="locationType" class="location-type">{{ locationType }}</div>
     <p>{{ report.description }}</p>
     <small
       >Pubblicata
@@ -70,8 +70,10 @@ const time = computed(() =>
   color: #626c60;
 }
 .location-type {
-  color: #366749;
-  background: #edf2e8;
+  margin-bottom: 12px;
+  color: #626c60;
+  font-size: 13px;
+  line-height: 1.5;
 }
 .report-card p {
   white-space: pre-wrap;
