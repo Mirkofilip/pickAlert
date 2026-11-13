@@ -12,8 +12,7 @@ defineProps({ showReportAction: { type: Boolean, default: false } });
     >
   </div>
   <nav class="bottom-nav" aria-label="Navigazione principale">
-    <RouterLink to="/"><span>▤</span>Segnalazioni</RouterLink
-    ><RouterLink to="/nuova-segnalazione"><span>＋</span>Segnala</RouterLink
+    <RouterLink to="/"><span aria-hidden="true">⌂</span>Home</RouterLink
     ><RouterLink to="/impostazioni"><span>⚙</span>Impostazioni</RouterLink
     ><RouterLink to="/info"><span>ⓘ</span>Info</RouterLink>
   </nav>
